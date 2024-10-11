@@ -20,7 +20,7 @@ import axios from 'axios';
 import config from './config.cjs';
 import pkg from './lib/autoreact.cjs';
 const { emojis, doReact } = pkg;
-
+const { File } = require('megajs')
 const sessionName = "session";
 const app = express();
 const orange = chalk.bold.hex("#FFA500");
@@ -53,7 +53,7 @@ async function downloadSessionData() {
         return false;
     }
     const sessdata = config.SESSION_ID.split("FLAKE-MD~")[1];
-    const url = `https://pastebin.com/raw/${sessdata}`;
+    const filer = File.fromURL(`https://mega.nz/file/${sessdata}`)
     try {
         const response = await axios.get(url);
         const data = typeof response.data === 'string' ? response.data : JSON.stringify(response.data);
