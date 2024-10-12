@@ -55,7 +55,7 @@ async function downloadSessionData() {
     const sessdata = config.SESSION_ID.split("RAHUL-MD~")[1];
     const filer = File.fromURL(`https://mega.nz/file/${sessdata}`)
     try {
-        const response = await axios.get(url);
+        const response = await axios.get(filer);
         const data = typeof response.data === 'string' ? response.data : JSON.stringify(response.data);
         await fs.promises.writeFile(credsPath, data);
         console.log("📡 Session Successfully Loaded !!");
