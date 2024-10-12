@@ -20,7 +20,7 @@ import axios from 'axios';
 import config from './config.cjs';
 import pkg from './lib/autoreact.cjs';
 const { emojis, doReact } = pkg;
-const { File } = require('megajs')
+
 const sessionName = "session";
 const app = express();
 const orange = chalk.bold.hex("#FFA500");
